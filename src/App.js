@@ -6,12 +6,11 @@ import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
 function App() {
   const [ingredients, setIngredients] = useState({
-    onions: false,
-    basil: false,
     cheese: false,
-    mushroom: false,
     olive: false,
     pineapple: false,
+    mushroom: false,
+    basil: false,
     tomato: false,
   });
   return (
