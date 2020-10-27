@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Cheese from '../assets/BaseCheese.png';
 import Base from '../assets/PizzaBase.png';
 import Olive from '../assets/Olive.png';
@@ -7,17 +7,23 @@ import Mushroom from '../assets/Mushroom.png';
 import Basil from '../assets/Basil.png';
 import Tomato from '../assets/Tomato.png';
 
-function Customize() {
+function Customize({ ingredients, setIngredients }) {
+  const changeIngredients = (name) => {
+    let newIngredients = JSON.parse(JSON.stringify(ingredients));
+    newIngredients[name] = !newIngredients[name];
+    setIngredients(newIngredients);
+  }
   return (
     <div style={{ display: 'flex' }}>
+      {JSON.stringify(ingredients)}
       <div style={{ border: '2px solid black', flex: '1' }}>
         <div style={{ maxHeight: '500px', maxWidth: '500px', position: 'relative' }}>
-          <img src={Cheese} alt='PizzaBase' height='100%' width='100%' className='ingredients'/>
-          <img src={Olive} alt='PizzaBase' height='100%' width='100%' className='ingredients'/>
-          <img src={Pineapple} alt='PizzaBase' height='100%' width='100%' className='ingredients'/>
-          <img src={Mushroom} alt='PizzaBase' height='100%' width='100%' className='ingredients'/>
-          <img src={Basil} alt='PizzaBase' height='100%' width='100%' className='ingredients'/>
-          <img src={Tomato} alt='PizzaBase' height='100%' width='100%' className='ingredients'/>
+          <img src={Cheese} alt='Cheese' height='100%' width='100%' className='ingredients'/>
+          <img src={Olive} alt='Olive' height='100%' width='100%' className='ingredients'/>
+          <img src={Pineapple} alt='Pineapple' height='100%' width='100%' className='ingredients'/>
+          <img src={Mushroom} alt='Mushroom' height='100%' width='100%' className='ingredients'/>
+          <img src={Basil} alt='Basil' height='100%' width='100%' className='ingredients'/>
+          <img src={Tomato} alt='Tomato' height='100%' width='100%' className='ingredients'/>
           <img 
             src={Base} 
             alt='PizzaBase' 
@@ -27,7 +33,10 @@ function Customize() {
           />
         </div>
       </div>
-      <div style={{ border: '2px solid black', flex: '1' }}>Checkbox</div>
+      <div style={{ border: '2px solid black', flex: '1' }}>
+        <input type="checkbox" id="pineapple" name="pineapple" value="" onChange={() => changeIngredients('pineapple')}></input>
+        <label for="pineapple">Pineapple</label>
+      </div>
     </div>
   )
 };
