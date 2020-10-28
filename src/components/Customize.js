@@ -22,13 +22,12 @@ function Customize({ ingredients, setIngredients }) {
       <div style={{ border: '2px solid black', flex: '1' }}>
         <div style={{ maxHeight: '500px', maxWidth: '500px', position: 'relative' }}>
           <motion.div
-            initial={{ opacity: 0 }}
+            initial={{ scale: 0 }}
             animate={{ 
-              y: ingredients["cheese"] ? 100 : -100,
-              opacity: ingredients["cheese"] ? 1 : 0, 
+              scale: ingredients["cheese"] ? 1 : 0, 
             }}
-            transition={{ duration: 1 }}
-            className="ingredients">
+            transition={{ duration: 0.3 }}
+            className="cheese z1">
               <img src={Cheese} alt='Cheese' height='100%' width='100%'/>
           </motion.div>
 
@@ -40,7 +39,7 @@ function Customize({ ingredients, setIngredients }) {
               opacity: ingredients["olive"] ? 1 : 0, 
             }}
             transition={{ duration: 1 }}
-            className="ingredients">
+            className="ingredients z4">
               <img src={Olive} alt='Olive' height='100%' width='100%'/>
           </motion.div>
 
@@ -51,7 +50,7 @@ function Customize({ ingredients, setIngredients }) {
               opacity: ingredients["pineapple"] ? 1 : 0, 
             }}
             transition={{ duration: 1 }}
-            className="ingredients">
+            className="ingredients z3">
               <img src={Pineapple} alt='Pineapple' height='100%' width='100%'/>
           </motion.div>
 
@@ -62,7 +61,7 @@ function Customize({ ingredients, setIngredients }) {
               opacity: ingredients["mushroom"] ? 1 : 0, 
             }}
             transition={{ duration: 1 }}
-            className="ingredients">
+            className="ingredients z4">
               <img src={Mushroom} alt='Mushroom' height='100%' width='100%'/>
           </motion.div>
 
@@ -73,7 +72,7 @@ function Customize({ ingredients, setIngredients }) {
               opacity: ingredients["basil"] ? 1 : 0, 
             }}
             transition={{ duration: 1 }}
-            className="ingredients">
+            className="ingredients z4">
               <img src={Basil} alt='Basil' height='100%' width='100%'/>
           </motion.div>
 
@@ -84,10 +83,10 @@ function Customize({ ingredients, setIngredients }) {
               opacity: ingredients["tomato"] ? 1 : 0, 
             }}
             transition={{ duration: 1 }}
-            className="ingredients">
+            className="ingredients z4">
               <img src={Tomato} alt='Tomato' height='100%' width='100%'/>
           </motion.div>
-          
+
           <img 
             src={Base} 
             alt='PizzaBase' 
@@ -128,8 +127,8 @@ function Customize({ ingredients, setIngredients }) {
           <input type="checkbox" checked={ingredients["tomato"]} onChange={(e) => onChange(e.currentTarget.checked, 'tomato')}></input>
           <span className="checkmark"></span>
         </label>
+        {JSON.stringify(ingredients)}
       </div>
-      {JSON.stringify(ingredients)}
     </div>
   )
 };

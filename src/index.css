@@ -7,6 +7,11 @@ body {
   margin-top: -100px;
 }
 
+.cheese {
+  width: 100%;
+  position: absolute;
+}
+
 /* The container */
 .container-checkbox {
   display: block;
@@ -135,4 +140,20 @@ body {
   height: 8px;
   border-radius: 50%;
   background: white;
+}
+
+.z1 {
+  z-index: 1;
+}
+
+.z2 {
+  z-index: 2;
+}
+
+.z3 {
+  z-index: 3;
+}
+
+.z4 {
+  z-index: 4;
 }
