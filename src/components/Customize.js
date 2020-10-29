@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import { useHistory } from 'react-router-dom';
 
 import Cheese from '../assets/BaseCheese.png';
 import Base from '../assets/PizzaBase.png';
@@ -10,6 +11,7 @@ import Basil from '../assets/Basil.png';
 import Tomato from '../assets/Tomato.png';
 
 function Customize({ ingredients, setIngredients }) {
+  let history = useHistory();
   const onChange = (e, name) => {
     console.log(e)
     let newIngredients = JSON.parse(JSON.stringify(ingredients));
@@ -127,6 +129,7 @@ function Customize({ ingredients, setIngredients }) {
           <input type="checkbox" checked={ingredients["tomato"]} onChange={(e) => onChange(e.currentTarget.checked, 'tomato')}></input>
           <span className="checkmark"></span>
         </label>
+        <button onClick={() => history.push("/checkout")}>Proceed to Checkout</button>
         {JSON.stringify(ingredients)}
       </div>
     </div>
