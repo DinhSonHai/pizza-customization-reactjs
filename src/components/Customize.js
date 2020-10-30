@@ -13,7 +13,6 @@ import Tomato from '../assets/Tomato.png';
 function Customize({ ingredients, setIngredients }) {
   const history = useHistory();
   const onChange = (e, name) => {
-    console.log(e)
     let newIngredients = JSON.parse(JSON.stringify(ingredients));
     newIngredients[name] = e;
     setIngredients(newIngredients);
