@@ -11,7 +11,7 @@ import Basil from '../assets/Basil.png';
 import Tomato from '../assets/Tomato.png';
 
 function Customize({ ingredients, setIngredients }) {
-  let history = useHistory();
+  const history = useHistory();
   const onChange = (e, name) => {
     console.log(e)
     let newIngredients = JSON.parse(JSON.stringify(ingredients));
